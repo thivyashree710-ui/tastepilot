@@ -1,0 +1,40 @@
+{
+  "name": "tastepilot",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web \"tsx watch server/index.ts\" \"vite --config client/vite.config.ts\"",
+    "build": "vite build --config client/vite.config.ts && tsc -p tsconfig.build.json",
+    "start": "node dist/server/index.js",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p client/tsconfig.json --noEmit",
+    "test:live": "vitest run --config vitest.live.config.ts",
+    "e2e": "echo 'see e2e/README.md'"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/supertest": "^7.2.1",
+    "@vitejs/plugin-react": "^4.3.0",
+    "concurrently": "^9.2.5",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "description": "TastePilot: taste translation across cities, built on Qloo"
+}

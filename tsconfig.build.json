@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "server/**/*.ts"
+  ],
+  "exclude": [
+    "tests",
+    "client"
+  ]
+}
