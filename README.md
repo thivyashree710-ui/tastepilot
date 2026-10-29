@@ -13,7 +13,7 @@ Built for the Qloo Agentic Hackathon (Oct 2026). MIT licensed.
 Mobile (390 px): `docs/screenshots/s5-mobile.png`. The sample uses made-up input (Chennai → Bengaluru); the places, ratings and descriptions shown are what Qloo returned.
 
 ## Status
-Public demo URL and public repository URL: **not published yet** (see `SUBMISSION_CHECKLIST.md`). Everything runs locally and in Docker.
+Source: https://github.com/thivyashree710-ui/tastepilot (public, MIT). Public demo URL: **not verified yet** (see `SUBMISSION_CHECKLIST.md`). Everything runs locally and in Docker.
 
 ## The problem
 Maps and review apps rank places by popularity and proximity. Someone who loves indie music, quiet cafés and science-fiction films has no way to say "find me the Bengaluru version of my Chennai" — and an LLM answering from memory can't show where its suggestions come from.

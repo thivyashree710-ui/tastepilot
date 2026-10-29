@@ -12,7 +12,7 @@ Legend: ✅ done and verified · ⏳ pending (needs your account or action) · �
 - ❓ The live **submission form fields** (e.g. whether a demo video is required) are unverified; open the form and check.
 
 ## Publishing audit (2026-10-29, executed, not assumed)
-- **GitHub**: no `gh`/`glab` installed; no `GH_*`/`GITHUB_*` token in the environment; `ssh -T git@github.com` → *Permission denied (publickey)* (this machine's key is not registered with GitHub); no git remote configured. A public repo could not be created or pushed. I did not read stored credential files.
+- **GitHub** (superseded: the repo was later created and pushed by the team; see Status below). Earlier audit: no `gh`/`glab` installed; no `GH_*`/`GITHUB_*` token in the environment; `ssh -T git@github.com` → *Permission denied (publickey)* (this machine's key is not registered with GitHub); no git remote configured. A public repo could not be created or pushed. I did not read stored credential files.
 - **Render / hosting**: no Render, Fly, Railway, Vercel or Netlify CLI or token present. Nothing deployed.
 - **Devpost**: `qloo.devpost.com` returns a Cloudflare "verifying you are not a bot" challenge to both fetch and the headless browser, so the live rules page and submission form were not read; the rules above are the text you pasted. I did not try to bypass the challenge. Nothing was submitted, and no terms were accepted or attestations made.
 - **Key rotation**: not verified (no key-management interface). The key shared in chat must be treated as compromised; it is only in the git-ignored `.env`, never in the repo, history, image or bundle.
@@ -29,7 +29,7 @@ Legend: ✅ done and verified · ⏳ pending (needs your account or action) · �
 
 ## Needs you (I cannot do these: no GitHub/Render access in this environment)
 1. ⏳ **Rotate the Qloo key** if there is any chance it is public (it was pasted in a chat). Then update `.env` and the Render secret.
-2. ⏳ **Create the public GitHub repo `tastepilot` and push**: `gh` is not installed here. With a GitHub account: create an empty public repo named `tastepilot` (no README/license), then
+2. ✅ (done by the team, verified) **Public GitHub repo `tastepilot`** — original steps kept for reference: `gh` is not installed here. With a GitHub account: create an empty public repo named `tastepilot` (no README/license), then
    `git remote add origin https://github.com/<you>/tastepilot.git && git push -u origin main`. GitHub will detect the MIT license and show it in the About section; confirm it does.
 3. ⏳ **Deploy on Render** from the repo (Blueprint → `render.yaml`), set `QLOO_API_KEY` as a secret, then run the smoke tests in `DEPLOYMENT.md` from a clean browser window.
 4. ⏳ **Record a short demo video** if the Devpost form asks for one (follow `DEMO_SCRIPT.md`; do not invent anything not on screen).
@@ -37,6 +37,6 @@ Legend: ✅ done and verified · ⏳ pending (needs your account or action) · �
 6. ⏳ Keep the demo up through **Nov 5, 11:45 pm ET**.
 
 ## Status
-- Public repo URL: **none yet**
+- Public repo URL: **https://github.com/thivyashree710-ui/tastepilot** (verified anonymously on 2026-10-29: public, MIT license detected by GitHub, `main` = latest commit, no `.env` in the tree)
 - Public demo URL: **none yet**
 - Devpost submission: **not submitted**
