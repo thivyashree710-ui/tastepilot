@@ -15,15 +15,18 @@ Mobile (390 px): `docs/screenshots/s5-mobile.png`. The sample uses made-up input
 ## Status
 Source: https://github.com/thivyashree710-ui/tastepilot (public, MIT). Public demo URL: **not verified yet** (see `SUBMISSION_CHECKLIST.md`). Everything runs locally and in Docker.
 
+## Design: "The Cultural Atlas"
+An editorial identity built with plain CSS and SVG (no UI kit, no webfont requests): obsidian and parchment surfaces, vermilion reserved for the journey and primary actions, petrol, brass and stone as supporting colours, a system editorial serif stack for headlines. The hero draws a route from the source to the destination city using **your actual inputs** as nodes (the sample's favorites before you enter anything, your own after) and, after a run, the top results Qloo returned. Coordinates are shown only for Chennai and Bengaluru; the route itself is abstract. Motion is limited to the route draw and a content reveal, and is disabled under `prefers-reduced-motion`. Verified: no horizontal scroll at 390 px, keyboard-operable map nodes, and computed text contrast of at least 4.5:1 (3:1 for large text) for the palette pairs in use.
+
 ## The problem
 Maps and review apps rank places by popularity and proximity. Someone who loves indie music, quiet cafés and science-fiction films has no way to say "find me the Bengaluru version of my Chennai" — and an LLM answering from memory can't show where its suggestions come from.
 
 ## What it does
-1. **Taste Passport**: source city (context), destination, specific favorites, genres, place categories, atmosphere, budget, stops, things to avoid, optional companions. A one-click **sample scenario** (made-up input, Chennai → Bengaluru) demos everything.
+1. **Taste Passport**: an editorial form that sets your source city (context) and destination as two large locations, then numbered groups: specific favorites, genres, place categories, atmosphere, limits (budget, stops, things to avoid) and optional companions. A one-click **sample scenario** (made-up input, Chennai → Bengaluru) demos everything.
 2. **Taste Translation agent** (bounded, ≤30 Qloo calls, traced): resolves favorites → Qloo entities; genres → Qloo tags → representative seed entities (only when you didn't name a favorite of that type); place categories → Qloo tag filters; then asks Qloo Insights for places in the destination steered by your signals, with explainability.
-3. **Explainable recommendations**: each card shows Qloo's description, address, rating, price *level* (an indicator), weekly schedule (not live status), website, why it matched, constraint checks, and badges for source and evidence tier.
-4. **Taste Translation Map**: *You said → Qloo resolved → In the destination*, with an equivalent text list.
-5. **What-if refinement** with a "what changed" diff; **proposed plan** (labeled unverified, not route-optimized); **GroupTaste** (up to 2 companions); **Agent activity** timeline; **Compare** (Qloo with vs without your signals; no LLM involved).
+3. **Explainable discoveries**: a lead discovery with its Qloo image and a mosaic of the rest; each shows Qloo's description, address, rating, price *level* (an indicator), weekly schedule (not live status), website, why it matched, constraint checks, and badges for source and evidence tier.
+4. **Taste Translation Map** (a dark "atlas" section): *You said → Qloo resolved → In the destination*, with an equivalent text list. Lines: solid vermilion = Qloo explainability, dashed brass = returned under a category filter (app-derived), dotted grey = Qloo lookup of your input. The route is abstract, not geographic.
+5. **What-if refinement** with a before/after board (dropped places struck through, new ones marked, unchanged count); **proposed plan** (labeled unverified, not route-optimized); **GroupTaste** (up to 2 companions); **Agent activity** timeline; **Compare** (Qloo with vs without your signals; no LLM involved).
 
 ## Provenance (what is what)
 | Label | Meaning |

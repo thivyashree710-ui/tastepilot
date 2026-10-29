@@ -24,19 +24,26 @@ Legend: ✅ done and verified · ⏳ pending (needs your account or action) · �
 - ✅ 72 mocked tests, typecheck, production build, Docker build and run, browser journey (7/7)
 - ✅ MIT `LICENSE`; `.env.example` placeholders only; `.gitignore` excludes `.env`
 - ✅ Docs: `README.md`, `SUBMISSION.md`, `DEMO_SCRIPT.md`, `DEPLOYMENT.md`, `TEST_REPORT.md`
-- ✅ Genuine screenshots in `docs/screenshots/` (from the live run)
+- ✅ Genuine screenshots in `docs/screenshots/` (from the live run, redesigned UI)
 - ✅ Local git repository initialised with an initial commit; secret scan clean (key only in ignored `.env`)
 
-## Needs you (I cannot do these: no GitHub/Render access in this environment)
-1. ⏳ **Rotate the Qloo key** if there is any chance it is public (it was pasted in a chat). Then update `.env` and the Render secret.
-2. ✅ (done by the team, verified) **Public GitHub repo `tastepilot`** — original steps kept for reference: `gh` is not installed here. With a GitHub account: create an empty public repo named `tastepilot` (no README/license), then
-   `git remote add origin https://github.com/<you>/tastepilot.git && git push -u origin main`. GitHub will detect the MIT license and show it in the About section; confirm it does.
-3. ⏳ **Deploy on Render** from the repo (Blueprint → `render.yaml`), set `QLOO_API_KEY` as a secret, then run the smoke tests in `DEPLOYMENT.md` from a clean browser window.
-4. ⏳ **Record a short demo video** if the Devpost form asks for one (follow `DEMO_SCRIPT.md`; do not invent anything not on screen).
-5. ⏳ **Fill the Devpost submission** with `SUBMISSION.md`, the repo URL, the demo URL, screenshots; submit **before 09:15 AM IST Oct 31** (aim for earlier).
-6. ⏳ Keep the demo up through **Nov 5, 11:45 pm ET**.
+## Final audit (commit ff84e4b + docs alignment)
+- ✅ **GitHub repo** https://github.com/thivyashree710-ui/tastepilot: public, MIT detected by GitHub's license API, default branch `main`, remote head matched the latest local commit when checked; no `.env` tracked; secret scan clean (key only in the git-ignored `.env`).
+- ✅ **Docs aligned** with the "Cultural Atlas" redesign (`README.md`, `SUBMISSION.md`, `DEMO_SCRIPT.md`): hero route, numbered Passport, lead discovery + mosaic, atlas map, before/after what-if.
+- ✅ **Final checks on this tree**: 72/72 mocked tests, typecheck clean, production build OK. Live Qloo tests and the browser journey (7/7) were last run on the same application code before the docs-only edits; they were not re-run in this audit.
+- ❓ **Render**: no Render CLI or credentials in this environment, so deployment status is **unknown**. `render.yaml` exists in the repo, but I have not seen a service, a URL, or a successful deploy, and I am not claiming the demo is live or that it runs the new design.
+- ⏳ Not re-verifiable here: the live Devpost page and form (Cloudflare bot challenge); rules text is from the copy the team pasted.
+
+## Remaining steps, in order
+1. **Rotate the Qloo key** (it was pasted in chat): request a new hackathon key, update it in Render's environment as the secret `QLOO_API_KEY`. Never commit it.
+2. **Get a public demo URL.** In Render: New → Blueprint → select `thivyashree710-ui/tastepilot` (reads `render.yaml`; `ALLOW_DEV_MODE=0`, `NODE_ENV=production`). If a service already exists, open its **Events/Deploys** tab and confirm the latest deploy is `ff84e4b` or newer and *Live*, with auto-deploy on for `main`.
+3. **Test the real URL in a clean/private window** (free tier may take 30–60 s to wake): `<URL>/api/health` → `{"ok":true}`; `<URL>/api/status` → `qloo: configured`, `devMode: false`; click *Try the sample scenario*; confirm no DEV banner, real Qloo images, Map tab works, Agent activity has no failed calls, and the page shows the new obsidian hero. Smoke-test commands are in `DEPLOYMENT.md`.
+4. **Put the verified URL in the repo** (README Status line, this checklist, and the repo's GitHub "About → Website" field) and push.
+5. **Devpost form** (rules require): functional demo link ✔ after step 3, **public repo URL** `https://github.com/thivyashree710-ui/tastepilot`, **text description** from `SUBMISSION.md`. Add screenshots from `docs/screenshots/`. Record a ~2-minute video from `DEMO_SCRIPT.md` **if the form asks for one** (unverified). Check any extra fields the live form shows (e.g. AI-assistance disclosure; the pasted rules do not require one, and `SUBMISSION.md` discloses Claude Code assistance anyway).
+6. **Accept the Devpost terms/eligibility yourself** (not done on your behalf) and **submit before Oct 31, 2026 09:15 AM IST** (Oct 30, 11:45 pm ET). Confirm the submission confirmation page/email.
+7. **Keep the demo up and the Qloo key valid** through Nov 5, 11:45 pm ET.
 
 ## Status
-- Public repo URL: **https://github.com/thivyashree710-ui/tastepilot** (verified anonymously on 2026-10-29: public, MIT license detected by GitHub, `main` = latest commit, no `.env` in the tree)
-- Public demo URL: **none yet**
+- Public repo URL: **https://github.com/thivyashree710-ui/tastepilot** (public, MIT)
+- Public demo URL: **none verified**
 - Devpost submission: **not submitted**
