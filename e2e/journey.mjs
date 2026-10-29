@@ -4,6 +4,7 @@ export default async function run(page, ui) {
   const out = {};
   out.h1 = await page.locator("h1").first().innerText();
   await page.setViewportSize({ width: 1280, height: 900 });
+  await page.waitForTimeout(2600); // let the route/signal reveal finish
   await page.screenshot({ path: (process.env.SHOT || ".") + "/s1-hero.png" });
   await page.getByRole("button", { name: "Try the sample scenario" }).click();
   await page.waitForSelector("article.card", { timeout: 30000 });
