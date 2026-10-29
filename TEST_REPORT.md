@@ -1,6 +1,6 @@
 # Test report
 
-Run on 2026-10-29 against the final state of this repository.
+Run on 2026-10-29 against the final state of this repository (re-run in the finalization pass: 72 mocked + 5 live passed, typecheck clean, build OK).
 
 | Check | Command | Result |
 |---|---|---|
@@ -9,7 +9,7 @@ Run on 2026-10-29 against the final state of this repository.
 | Type check (server, tests, client) | `npm run typecheck` | **clean** (exit 0) |
 | Production build | `npm run build` | **succeeds** (Vite + tsc; `dist/` has server only, no tests) |
 | Docker image | `docker build` + run with prod settings and a live key | **builds; runs as non-root; live translate returned 22 places, 0 failed calls; no key in logs or image filesystem** |
-| Browser journey | `e2e/journey.mjs` against the production server, live Qloo | **6/6 assertions passed**, 0 console errors, 0 failed requests |
+| Browser journey | `e2e/journey.mjs` against the production server, live Qloo | **7/7 assertions passed** (incl. tagline shown), 0 console errors, 0 failed requests |
 
 ## What the mocked tests cover (72)
 - **Qloo client**: header and documented params, `/v2/tags`, `signal.interests.tags`, normalization of live-shaped fields (price level, hours, subtype, tag explainability), unsafe `website` rejected, empty results, 401 (no retry), 403, 429 with retry and exhaustion, 5xx retry, timeout, malformed body, missing optional fields, unset `baseUrl` default.

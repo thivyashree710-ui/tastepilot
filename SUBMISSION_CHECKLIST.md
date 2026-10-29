@@ -11,11 +11,17 @@ Legend: ✅ done and verified · ⏳ pending (needs your account or action) · �
 - ❓ The rules text contains **no AI-assistance disclosure requirement**; the live Devpost form may ask. The submission text discloses Claude Code assistance anyway.
 - ❓ The live **submission form fields** (e.g. whether a demo video is required) are unverified; open the form and check.
 
+## Publishing audit (2026-10-29, executed, not assumed)
+- **GitHub**: no `gh`/`glab` installed; no `GH_*`/`GITHUB_*` token in the environment; `ssh -T git@github.com` → *Permission denied (publickey)* (this machine's key is not registered with GitHub); no git remote configured. A public repo could not be created or pushed. I did not read stored credential files.
+- **Render / hosting**: no Render, Fly, Railway, Vercel or Netlify CLI or token present. Nothing deployed.
+- **Devpost**: `qloo.devpost.com` returns a Cloudflare "verifying you are not a bot" challenge to both fetch and the headless browser, so the live rules page and submission form were not read; the rules above are the text you pasted. I did not try to bypass the challenge. Nothing was submitted, and no terms were accepted or attestations made.
+- **Key rotation**: not verified (no key-management interface). The key shared in chat must be treated as compromised; it is only in the git-ignored `.env`, never in the repo, history, image or bundle.
+
 ## Product and code
 - ✅ Working Qloo integration verified live (`/search`, `/v2/tags`, `/v2/insights`); 5 live tests pass
 - ✅ Agentic workflow, bounded, with truthful activity trace
 - ✅ Taste Passport, Translation, Map (+ list), Plan, GroupTaste, Compare (no-LLM comparison), what-if diff
-- ✅ 72 mocked tests, typecheck, production build, Docker build and run, browser journey (6/6)
+- ✅ 72 mocked tests, typecheck, production build, Docker build and run, browser journey (7/7)
 - ✅ MIT `LICENSE`; `.env.example` placeholders only; `.gitignore` excludes `.env`
 - ✅ Docs: `README.md`, `SUBMISSION.md`, `DEMO_SCRIPT.md`, `DEPLOYMENT.md`, `TEST_REPORT.md`
 - ✅ Genuine screenshots in `docs/screenshots/` (from the live run)

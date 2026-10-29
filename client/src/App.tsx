@@ -59,7 +59,7 @@ export default function App() {
 
       <section className="hero">
         <p className="eyebrow">Taste Translation</p>
-        <h1>Your taste knows <em>no borders.</em></h1>
+        <h1>Your taste travels <em>with you.</em></h1>
         <p className="lede">Discover the culture, places, and experiences that feel like you—even in a city you've never known.</p>
         <div className="row gap">
           <button className="primary" onClick={cta} disabled={busy}>{busy ? "Translating…" : "Translate My Taste"}</button>

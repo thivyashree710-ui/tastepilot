@@ -6,7 +6,7 @@ Pre-flight (1 min): server running with a real `QLOO_API_KEY` and `NODE_ENV=prod
 "You move from Chennai to Bengaluru. Maps tell you what's popular. TastePilot tells you what's *you*. It takes the artists and films you love, resolves them through Qloo, and finds places in your new city that connect to your taste — and shows the evidence for every one, including where it had to fall back."
 
 ## 2-minute demo
-1. **(0:00) Hero.** Read the headline. "Your taste knows no borders." Point to *Try the sample scenario* and the note that it's made-up input.
+1. **(0:00) Hero.** Read the headline. "Your taste travels with you." Point to *Try the sample scenario* and the note that it's made-up input.
 2. **(0:10) Passport.** Click the sample. While it loads: "Specific favorites — Prateek Kuhad, Radiohead, Blade Runner 2049 — are matched in Qloo and used directly as my signals."
 3. **(0:25) Translation.** Results appear (about 4 s). Open the first card: "Qloo's own description and rating; *evidence: signal-linked* means Qloo's explainability named one of my favorites." Point to the three badges: Qloo data / evidence / (app-derived).
 4. **(0:50) Honesty.** Show the amber notice: "Heritage buildings: Qloo had no places with my taste signals in Bengaluru, so it fell back to the same category without signals — flagged *low confidence*, not passed off as a match."

@@ -1,8 +1,19 @@
-# TastePilot — your taste knows no borders
+# TastePilot — your taste travels with you
 
 **Taste Translation for people moving to, or visiting, a city they don't know.** You tell TastePilot what you love (specific artists and films, genres, kinds of places, atmosphere). It resolves that through [Qloo](https://docs.qloo.com/)'s cultural-intelligence API and finds places in the destination city that connect to *your* taste, showing the evidence for each match and what is still unverified.
 
 Built for the Qloo Agentic Hackathon (Oct 2026). MIT licensed.
+
+## Screenshots (from the real running app, live Qloo, 2026-10-29)
+| | |
+|---|---|
+| ![Home and Taste Passport](docs/screenshots/s1-hero.png) | ![Translated recommendations](docs/screenshots/s2-translation.png) |
+| ![Taste Translation Map](docs/screenshots/s3-map.png) | ![Agent activity](docs/screenshots/s4-activity.png) |
+
+Mobile (390 px): `docs/screenshots/s5-mobile.png`. The sample uses made-up input (Chennai → Bengaluru); the places, ratings and descriptions shown are what Qloo returned.
+
+## Status
+Public demo URL and public repository URL: **not published yet** (see `SUBMISSION_CHECKLIST.md`). Everything runs locally and in Docker.
 
 ## The problem
 Maps and review apps rank places by popularity and proximity. Someone who loves indie music, quiet cafés and science-fiction films has no way to say "find me the Bengaluru version of my Chennai" — and an LLM answering from memory can't show where its suggestions come from.

@@ -1,7 +1,7 @@
 # TastePilot — Devpost submission text
 
 ## Tagline
-Your taste knows no borders.
+Your taste travels with you.
 
 ## Elevator pitch (30 s)
 When you move to a city you don't know, maps show you what's popular, not what's *you*. TastePilot takes the artists, films, genres and kinds of places you love, resolves them through Qloo's cultural-intelligence API, and finds places in your new city that connect to your taste — with the evidence for every match, and honest flags where the data is thin.

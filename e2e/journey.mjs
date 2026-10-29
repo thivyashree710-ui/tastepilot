@@ -2,6 +2,7 @@
 // Run: node <browser-automation>/browser.mjs http://localhost:8787/ --script e2e/journey.mjs   (set SHOT=docs/screenshots to save images)
 export default async function run(page, ui) {
   const out = {};
+  out.h1 = await page.locator("h1").first().innerText();
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.screenshot({ path: (process.env.SHOT || ".") + "/s1-hero.png" });
   await page.getByRole("button", { name: "Try the sample scenario" }).click();
@@ -39,7 +40,7 @@ export default async function run(page, ui) {
   await page.locator("#results").scrollIntoViewIfNeeded();
   await page.screenshot({ path: (process.env.SHOT || ".") + "/s5-mobile.png" });
   const asserts = {
-    cardsRendered: out.cards.length > 5, mapMatchesList: out.mapNodes === out.listRows, noFailedCalls: out.timelineErrors === 0,
+    taglineShown: /travels with you/i.test(out.h1 || ""), cardsRendered: out.cards.length > 5, mapMatchesList: out.mapNodes === out.listRows, noFailedCalls: out.timelineErrors === 0,
     planLabeledUnverified: /Proposed, unverified/.test(out.planLabel), diffUsesNames: !/[0-9A-F]{8}-[0-9A-F]{4}-/.test(out.diff), noMobileHScroll: out.mobileHScroll === false,
   };
   out.asserts = asserts; out.allPass = Object.values(asserts).every(Boolean);
